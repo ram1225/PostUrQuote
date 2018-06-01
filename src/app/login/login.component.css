@@ -1,0 +1,120 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container{
+     width:100%;
+}
+
+.row{
+    width: 100%;
+}
+
+.firstPartDiv{
+    min-height: 100vh;
+    background-image: url("../../assets/firsthalfdivbg1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.secondPartDiv{
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    padding: 120px 55px 55px 55px;
+}
+
+.login-form-title{
+    display: block;
+    width: 100%;
+    font-family: Poppins-Regular,Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 43px;
+}
+
+.wrap-input100 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+input{
+    outline: none;
+    border: none;
+    overflow: visible;
+}
+
+input.input100 {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.2;
+    padding: 0 26px;
+    height: 100%;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+
+.checkbox{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+
+.label-checkbox100 {
+    font-family: Poppins-Regular;
+    font-size: 13px;
+    color: #999999;
+    line-height: 1.4;
+    display: block;
+    position: relative;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.btnDiv{
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.customBtn{
+    display: block;
+    position: relative;
+    width: 100%;
+    font-family: Poppins-Regular,Arial, Helvetica, sans-serif;
+    height: 50px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.customBtn:hover{
+    background: #333333;
+    cursor: pointer;
+    border: none;
+}
