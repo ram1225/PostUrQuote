@@ -4,17 +4,31 @@
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 secondPartDiv">
       <div>
         <span class="login-form-title">Login to continue</span>
-        <form>
+        <form [formGroup]="loginForm" >
           <div class="form-group">
             <div class="wrap-input100 validate-input">
-              <input class="input100" type="text" name="email" />
+              <input 
+              class="input100" 
+              type="text" 
+              name="email" 
+              formControlName="email"
+              #email
+              [ngClass]="(email.value.length>0)?'has-val':''"
+              id="email"/>
               <span class="focus-input100"></span>
               <span class="label-input100">Email</span>       
             </div>
           </div>
           <div class="form-group">
             <div class="wrap-input100 validate-input">
-              <input class="input100" type="password" name="password">
+              <input 
+              class="input100" 
+              type="password" 
+              name="password"
+              id="password"
+              #password
+              [ngClass]="(password.value.length>0)?'has-val':''"
+              formControlName="password">
               <span class="focus-input100"></span>
               <span class="label-input100">Password</span>
             </div>
@@ -23,7 +37,7 @@
             <input type="checkbox" id="checkbox"/><label class="label-checkbox100" for="checkbox"> Remember me</label>
           </div>
           <div class="btnDiv">
-            <button type="submit" class="btn btn-primary customBtn">Login</button>
+            <button type="submit" class="btn btn-primary customBtn" [disabled]="!loginForm.valid" (click)="onSubmit()">Login</button>
           </div>
           
         </form>
