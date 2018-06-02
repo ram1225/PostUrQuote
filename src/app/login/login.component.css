@@ -188,6 +188,14 @@ input.input100 {
 
   /* style code ends here */
 
+  .alert-danger{
+    width: 100%;
+    padding: 5px 10px;
+    margin: -10px 5px 5px 0px;
+    font-family: Poppins-Regular;
+    font-size: 13px;
+  }
+
 .checkbox{
     display: flex;
     height: 50px;
@@ -212,14 +220,15 @@ input.input100 {
 
 .btnDiv{
     width: 100%;
-    display: block;
+    display: flex;
+    justify-content: center;
     position: relative;
 }
 
 .customBtn{
     display: block;
     position: relative;
-    width: 100%;
+    width: 50%;
     font-family: Poppins-Regular,Arial, Helvetica, sans-serif;
     height: 50px;
     border-radius: 10px;

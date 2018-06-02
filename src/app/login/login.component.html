@@ -4,7 +4,7 @@
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 secondPartDiv">
       <div>
         <span class="login-form-title">Login to continue</span>
-        <form [formGroup]="loginForm" >
+        <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
           <div class="form-group">
             <div class="wrap-input100 validate-input">
               <input 
@@ -12,12 +12,18 @@
               type="text" 
               name="email" 
               formControlName="email"
-              #email
-              [ngClass]="(email.value.length>0)?'has-val':''"
-              id="email"/>
+          
+              [ngClass]="(getemail.value.length>0)?'has-val':''"
+              id="email" />
               <span class="focus-input100"></span>
-              <span class="label-input100">Email</span>       
+              <span class="label-input100">Email</span>     
+              <!-- [pattern]="emailPattern"     we can also use this for email pattern validation-->
             </div>
+            <div *ngIf="getemail.touched && getemail.invalid" class="alert alert-danger">
+                <div *ngIf="getemail.errors.required">Email is required</div>
+                <div *ngIf="getemail.errors.pattern">Email is not valid.</div> 
+            </div>
+  
           </div>
           <div class="form-group">
             <div class="wrap-input100 validate-input">
@@ -26,18 +32,25 @@
               type="password" 
               name="password"
               id="password"
-              #password
-              [ngClass]="(password.value.length>0)?'has-val':''"
-              formControlName="password">
+          
+              [ngClass]="(getpassword.value.length>0)?'has-val':''"
+              formControlName="password" />
               <span class="focus-input100"></span>
               <span class="label-input100">Password</span>
+             </div>
+             <div *ngIf="getpassword.touched && getpassword.invalid" class="alert alert-danger">
+                <div *ngIf="getpassword.errors.required">Password is required</div>
+                <div *ngIf="getpassword.errors.minlength">Password should be minimum of {{ getpassword.errors.minlength.requiredLength }} characters</div>
+                <div *ngIf="getpassword.errors.maxlength">Password shouldn't be maximum of {{ getpassword.errors.maxlength.requiredLength }} characters</div>
+                
             </div>
+       
           </div>
           <div class="checkbox">
             <input type="checkbox" id="checkbox"/><label class="label-checkbox100" for="checkbox"> Remember me</label>
           </div>
           <div class="btnDiv">
-            <button type="submit" class="btn btn-primary customBtn" [disabled]="!loginForm.valid" (click)="onSubmit()">Login</button>
+            <button type="submit" class="btn btn-primary customBtn" [disabled]="!loginForm.valid">Login</button>
           </div>
           
         </form>
