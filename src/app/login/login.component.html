@@ -32,16 +32,19 @@
               type="password" 
               name="password"
               id="password"
-          
+              [pattern]="passwordPattern"
               [ngClass]="(getpassword.value.length>0)?'has-val':''"
               formControlName="password" />
               <span class="focus-input100"></span>
               <span class="label-input100">Password</span>
+              <i class="fa fa-question-circle-o" placement="left" container="body" [ngbTooltip]="ruleSet"> </i>
+              <!-- <div class="tooltip"><ng-template #tipContent>{{ ruleSet}}</ng-template></div> -->
              </div>
              <div *ngIf="getpassword.touched && getpassword.invalid" class="alert alert-danger">
                 <div *ngIf="getpassword.errors.required">Password is required</div>
                 <div *ngIf="getpassword.errors.minlength">Password should be minimum of {{ getpassword.errors.minlength.requiredLength }} characters</div>
                 <div *ngIf="getpassword.errors.maxlength">Password shouldn't be maximum of {{ getpassword.errors.maxlength.requiredLength }} characters</div>
+                <div *ngIf="getpassword.errors?.pattern">Password is not meeting guidelines</div>
                 
             </div>
        

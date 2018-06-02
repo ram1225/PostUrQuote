@@ -196,6 +196,20 @@ input.input100 {
     font-size: 13px;
   }
 
+.fa-question-circle-o{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+}
+
+.bs-tooltip-top,ng-template{
+    display:block;
+    width:150px !important;
+    height:auto;
+}
+
 .checkbox{
     display: flex;
     height: 50px;
