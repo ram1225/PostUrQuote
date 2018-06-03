@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LoginModel } from '../models/login-model';
+import { Router } from '@angular/router';
 
 /*
 For email pattern validation: https://www.concretepage.com/angular-2/angular-2-4-email-validation-example
@@ -17,11 +19,11 @@ export class LoginComponent implements OnInit {
   emailPattern = "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   passwordPattern = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})";
   ruleSet: string;
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     /* declaring some rules 
     For tooltip ng bootstrap : https://ng-bootstrap.github.io/#/components/tooltip/api
     */
-    this.ruleSet= `
+    this.ruleSet = `
      1) must contains one digit from 0-9  \n
      2) must contains one lowercase characters \n
      3) must contains one uppercase characters
@@ -53,7 +55,13 @@ export class LoginComponent implements OnInit {
   submitForm(loginForm) {
 
     console.log('form submitted' + JSON.stringify(loginForm));
+    let formData = loginForm;
+    /* Setting email to model */
+    LoginModel.email = formData.email;
 
+    if (LoginModel.email != null && LoginModel.email.length > 0) {
+      this.router.navigate(['/home']);
+    }
   }
 
 

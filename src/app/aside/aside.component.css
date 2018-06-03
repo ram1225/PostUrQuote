@@ -1,0 +1,125 @@
+.card{
+    
+    background-size: 100%;
+    height: 100%;
+    border: 0px;
+    
+    width: 100%;
+    padding: 0;
+    border-radius: 0px;
+}
+
+.card-header{
+    background-color: #1DA1F2 !important;
+    height: 95px;
+    border-radius: 0px;
+}
+
+.card-body .username{
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.card-body .email{
+    font-size: 70%;
+    color: #657786;
+}
+
+.card-body{
+    padding: 0;
+}
+
+.fa-camera{
+    background: transparent;
+    display: inline-block;
+    font-style: normal;
+    vertical-align: baseline;
+    position: relative;
+    font-size: 30px;
+    line-height: 1;
+    margin: 18px 0 0 18px;
+
+}
+.DashboardProfileCard-avatarContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.avatar{
+    position: relative;
+    float: none;
+    right: auto;
+}
+
+.DashboardProfileCard-avatarImage
+{
+    border-radius: 50%;
+    height: 72px;
+    width: 72px;
+    border: 2px solid #fff;
+    -moz-box-sizing: border-box;
+
+    color: #fff;
+    display: inline-block!important;
+    max-width: 100%;
+    background-color: #1DA1F2 !important;
+    margin: -30px 0 0 5px;
+}
+
+.DashboardProfileCard-userFields{
+      width: 70%;
+      margin: 5px 0 0 5px;
+      padding: 2px;
+}
+
+
+.card-footer{
+    font-family: 'Courier New', Courier, monospace !important;
+    background-color: #fff;
+    border:none;
+}
+
+.posts,.following, .followers{
+    color: #657786;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: .02em;
+    line-height: 16px;
+}
+
+.post-text{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 3px;
+    transition: color .15s ease-in-out;
+    color: #1DA1F2 !important;
+}
+
+@media (max-width: 552px) {
+    .DashboardProfileCard-userFields .email{
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 553px) {
+    .DashboardProfileCard-userFields .email{
+        font-size: 9px;
+    }
+}
+@media (max-width: 992px) {
+    .DashboardProfileCard-userFields .email{
+        font-size: 9px;
+    }
+}
+
+@media (min-width: 993px) {
+    .DashboardProfileCard-userFields .email{
+        font-size: 12px;
+    }
+}
+
+
