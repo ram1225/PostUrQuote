@@ -5,11 +5,14 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
   @Input() navItems: string[];
   constructor() { }
 
-  ngOnInit() {
-  }
+  public isCollapsed = true;
+  
+  toggleMenu() {
+     this.isCollapsed = !this.isCollapsed;
+   }
 
 }

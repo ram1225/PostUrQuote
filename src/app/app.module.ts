@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { AsideComponent } from './aside/aside.component';
+import { PostDashboardComponent } from './post-dashboard/post-dashboard.component';
 
 
 
@@ -18,7 +19,8 @@ import { AsideComponent } from './aside/aside.component';
     LoginComponent,
     HomeComponent,
     NavComponent,
-    AsideComponent
+    AsideComponent,
+    PostDashboardComponent
   ],
   imports: [
     BrowserModule,
