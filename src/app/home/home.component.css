@@ -1,3 +1,19 @@
 section{
     margin-top: 10px;
+    
+}
+
+app-post-dashboard{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 768px){
+
+    .post {
+        margin: 10px 0 0 15px;
+    }
 }

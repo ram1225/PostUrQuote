@@ -1,16 +1,17 @@
 <nav class="navbar navbar-toggleable-lg navbar-expand-lg navbar-dark bg-dark">
-
   <div class="navbar-header">
     <a class="navbar-brand" href="#">Post Your Quote</a>
-  
   </div>
   <button class="navbar-toggler" type="button" aria-controls="appNavigation" aria-expanded="false" aria-label="Toggle navigation"
-  (click)="toggleMenu()">
-  <span class="navbar-toggler-icon"></span>
-</button>
+    (click)="toggleMenu()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <div class="collapse navbar-collapse" id="appNavigation" [ngbCollapse]="isCollapsed">
     <div class="navbar-nav mr-auto">
       <a class="nav-item nav-link" routerLink="" routerLinkActive="active" *ngFor="let section of navItems">{{ section }}</a>
     </div>
   </div>
 </nav>
+
+
+<!-- For navbar: http://plnkr.co/edit/pfFt7y966Gah0ke83W3O?p=info -->

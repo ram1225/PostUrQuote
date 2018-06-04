@@ -1,5 +1,25 @@
-<div class="row">
+<div class="row tweet-box">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="form-div">
+      <form [formGroup]="postForm" (ngSubmit)="formSubmit()" class="form-group">
+        <textarea class="form-control" formControlName="messageArea"  id="new_message" name="new_message" placeholder="Type in your message" ></textarea>
+        <!-- <div *ngIf="messageArea.touched && messageArea.invalid" class="alert alert-danger">
+            Write something to send it over 
+        </div> -->
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <button class="btn btn-info" type="submit" [disabled]="!postForm.valid">Post New Message</button>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <h6>320 characters remaining</h6>
+          </div>
+        </div>
+
+      </form>
+    </div>
 
   </div>
 </div>
+
+
+<!-- For vertical aligning center: https://vanseodesign.com/css/vertical-centering/ -->
