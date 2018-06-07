@@ -11,7 +11,12 @@ import { NavComponent } from './nav/nav.component';
 import { AsideComponent } from './aside/aside.component';
 import { PostDashboardComponent } from './post-dashboard/post-dashboard.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { firebaseConfig } from '../environments/firebase.config';
+import { PostsComponent } from './post-dashboard/post/post.component';
 
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,17 @@ import { PostDashboardComponent } from './post-dashboard/post-dashboard.componen
     HomeComponent,
     NavComponent,
     AsideComponent,
-    PostDashboardComponent
+    PostDashboardComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

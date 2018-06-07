@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, FormControlName, Validators } from '@angular/forms';
+import { PostsComponent } from './post/post.component';
 
 @Component({
   selector: 'app-post-dashboard',
@@ -7,8 +8,9 @@ import { FormGroup, FormBuilder, FormControl, FormControlName, Validators } from
   styleUrls: ['./post-dashboard.component.css']
 })
 export class PostDashboardComponent implements OnInit {
-  pattern: string = "[a-zA-Z0-9- ]+";
+  pattern: string = "[a-zA-Z0-9!, ]+";
   postForm: FormGroup;
+  @Input() postRef: PostsComponent;
   
   constructor() {
     // this.message
@@ -30,5 +32,8 @@ export class PostDashboardComponent implements OnInit {
 
   formSubmit(){
     console.log(this.postForm.value);
+    this.postRef.addQuote(this.postForm.value.messageArea);
+    this.postForm.reset();
+
   }
 }

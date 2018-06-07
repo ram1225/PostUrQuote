@@ -1,0 +1,21 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+    margin: 10px 10px 10px -15px;
+    border-radius: 0;
+    font-family: Poppins-Regular;
+    border-top: 1px double #60686d;
+    border-left: 1px double  #60686d;
+}
+
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.pull-right{
+    text-align: end;
+    padding-right: 5px; 
+    font-size: 12px;
+}

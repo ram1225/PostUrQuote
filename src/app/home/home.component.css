@@ -17,3 +17,12 @@ app-post-dashboard{
         margin: 10px 0 0 15px;
     }
 }
+
+.sidebox,.post{
+    height:fit-content;
+}
+
+.row:nth-child(2)> div:first-child{
+
+    height:fit-content;
+}
