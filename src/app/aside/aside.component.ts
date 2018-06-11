@@ -7,8 +7,8 @@ import { LoginModel } from '../models/login-model';
   styleUrls: ['./aside.component.css']
 })
 export class AsideComponent implements OnInit {
-  private userName: string;
-  private email: string;
+  public userName: string;
+  public email: string;
 
   constructor() { }
 

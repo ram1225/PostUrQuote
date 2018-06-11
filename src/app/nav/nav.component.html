@@ -9,7 +9,7 @@
   <div class="collapse navbar-collapse" id="appNavigation" [ngbCollapse]="isCollapsed">
     <div class="navbar-nav mr-auto">
       <a class="nav-item nav-link"  [routerLinkActive]="['active']" routerLink="" *ngFor="let section of navItems; let i = index;" (click)="navigate(i)">{{ section }}</a>
-      <a class="nav-item nav-link"  routerLink="" (click)="authService.logout()">Logout</a>
+      <a class="nav-item nav-link"  routerLink="" (click)="authService.logOut()">Logout</a>
     </div>
   </div>
  
