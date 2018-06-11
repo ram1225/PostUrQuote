@@ -13,11 +13,7 @@ export class PostDashboardComponent implements OnInit {
   @Input() postRef: PostsComponent;
   
   constructor() {
-    // this.message
-    // .valueChanges
-    // .debounceTime(200)
-    // .distinctUntilChanged()
-    //  .subscribe((event) => {
+ 
    }
 
   ngOnInit() {

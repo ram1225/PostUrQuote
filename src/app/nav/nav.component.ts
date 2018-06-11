@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,7 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavComponent {
   @Input() navItems: string[];
-  constructor() { }
+  @Input() navLinks: string[];
+  constructor(private router: Router, private authService: AuthService) { }
 
   public isCollapsed = true;
   
@@ -15,4 +18,8 @@ export class NavComponent {
      this.isCollapsed = !this.isCollapsed;
    }
 
+   navigate(index){
+  
+    this.router.navigate(["/"+this.navLinks[index]]);
+   }
 }

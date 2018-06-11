@@ -249,6 +249,10 @@ input.input100 {
     text-transform: uppercase;
 }
 
+.googlelogin{
+    margin-top: 25px;
+}
+
 .customBtn:hover{
     background: #333333;
     cursor: pointer;

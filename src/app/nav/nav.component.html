@@ -1,6 +1,6 @@
-<nav class="navbar navbar-toggleable-lg navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-toggleable-lg navbar-expand-lg fixed-top navbar-dark bg-dark">
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">Post Your Quote</a>
+    <a class="navbar-brand" [routerLink]="['home']">Post Your Quote</a>
   </div>
   <button class="navbar-toggler" type="button" aria-controls="appNavigation" aria-expanded="false" aria-label="Toggle navigation"
     (click)="toggleMenu()">
@@ -8,9 +8,11 @@
   </button>
   <div class="collapse navbar-collapse" id="appNavigation" [ngbCollapse]="isCollapsed">
     <div class="navbar-nav mr-auto">
-      <a class="nav-item nav-link" routerLink="" routerLinkActive="active" *ngFor="let section of navItems">{{ section }}</a>
+      <a class="nav-item nav-link"  [routerLinkActive]="['active']" routerLink="" *ngFor="let section of navItems; let i = index;" (click)="navigate(i)">{{ section }}</a>
+      <a class="nav-item nav-link"  routerLink="" (click)="authService.logout()">Logout</a>
     </div>
   </div>
+ 
 </nav>
 
 

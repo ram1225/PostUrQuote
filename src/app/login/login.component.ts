@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginModel } from '../models/login-model';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 /*
 For email pattern validation: https://www.concretepage.com/angular-2/angular-2-4-email-validation-example
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   emailPattern = "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   passwordPattern = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})";
   ruleSet: string;
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) {
     /* declaring some rules 
     For tooltip ng bootstrap : https://ng-bootstrap.github.io/#/components/tooltip/api
     */
@@ -64,5 +65,15 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
+  signInWithGoogle(){
+      if( this.authService.isLoggedIn()){
+        this.router.navigate(['home']);
+      }else{
+        this.authService.signInWithGoogle().then(
+          (res)=>{
+            this.router.navigate(['home']);
+          })
+        .catch((err) => console.log(err));
+      }    
+  }
 }

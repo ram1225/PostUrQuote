@@ -1,5 +1,5 @@
 export  class LoginModel{
-   static email: string;
-    password: string;
+   static email: string = "username";
+   static username: string = "email";
  
 }

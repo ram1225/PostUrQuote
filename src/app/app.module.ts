@@ -17,6 +17,10 @@ import { PostsComponent } from './post-dashboard/post/post.component';
 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
+import { AuthService } from './service/auth.service';
+import { AuthGuardService } from './service/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     NavComponent,
     AsideComponent,
     PostDashboardComponent,
-    PostsComponent
+    PostsComponent,
+    DashboardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [AuthService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
