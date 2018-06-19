@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { LoginModel } from '../../models/login-model';
 
 @Component({
   selector: 'load-posts',
@@ -11,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class PostsComponent implements OnInit {
 
   itemsRef: AngularFireList<any>;
-  quotes: Observable<any[]>;
+  public quotes: Observable<any[]>;
 
 
   constructor(private db: AngularFireDatabase) { }
@@ -20,13 +21,16 @@ export class PostsComponent implements OnInit {
     this.itemsRef = this.db.list('quotes');
 
     this.quotes = this.itemsRef.snapshotChanges().pipe(map(changes => {
+      LoginModel.quotesCount = changes.map(c => ({ key: c.payload.key, ...c.payload.val() })).length;
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() })).reverse();
     }));
+
+   
   }
 
   /* Add quote to database */
   addQuote(message: string) {
-    this.itemsRef.push({ quote: message, created: (new Date().toLocaleString()) });
+    this.itemsRef.push({ quote: message, created: (new Date().toLocaleString()), who: LoginModel.username });
   }
 
   /* Update quote from the database */

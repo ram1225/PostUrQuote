@@ -9,12 +9,13 @@ import { LoginModel } from '../models/login-model';
 export class AsideComponent implements OnInit {
   public userName: string;
   public email: string;
-
+  public quotesCount: number;
   constructor() { }
 
   ngOnInit() {
     this.userName = LoginModel.username;
     this.email = LoginModel.email;
+    this.quotesCount = LoginModel.quotesCount;
   }
 
 }
