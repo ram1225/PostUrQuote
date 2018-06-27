@@ -21,6 +21,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { AuthService } from './service/auth.service';
 import { AuthGuardService } from './service/auth-guard.service';
+import { FollowComponent } from './follow/follow.component';
+import { FollowersDataService } from './follow/followers.service';
+import { PostService } from './service/post.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { AuthGuardService } from './service/auth-guard.service';
     PostDashboardComponent,
     PostsComponent,
     DashboardComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FollowComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,7 @@ import { AuthGuardService } from './service/auth-guard.service';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [AuthService,AuthGuardService],
+  providers: [AuthService,AuthGuardService, FollowersDataService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

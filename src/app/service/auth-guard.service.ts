@@ -16,6 +16,5 @@ export class AuthGuardService implements CanActivate {
       this.authService.setNavBar(true);
       return true;
     }
-
   }
 }

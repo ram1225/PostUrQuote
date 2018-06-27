@@ -1,11 +1,20 @@
-<div class="card" *ngFor="let item of quotes | async">
+<div *ngIf="(quotes | async )?.length > 0; else writeOne">
+    <div class="card" *ngFor="let item of quotes | async">
 
-    <div class="card-body">
-        {{ item.quote}}
+        <div class="card-body">
+            {{ item.quote}}
+        </div>
+        <div>
+            <p class="pull-left">{{ item.who}}</p>
+            <p class="pull-right">{{item.created}}</p>
+        </div>
+
     </div>
-    <div>
-        <p class="pull-left">{{ item.who}}</p>
-        <p class="pull-right">{{item.created}}</p>
-    </div>
-    
 </div>
+<ng-template #writeOne>
+    <div class="card">
+        <div class="card-body">
+            Oops! There are no quotes yet, why don't you write one.. Happy Quoting!!!
+        </div>
+    </div>
+</ng-template>

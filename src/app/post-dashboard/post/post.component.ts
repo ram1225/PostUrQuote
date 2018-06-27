@@ -1,52 +1,48 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LoginModel } from '../../models/login-model';
+import { FollowersDataService } from '../../follow/followers.service';
+import { PostService } from '../../service/post.service';
 
 @Component({
   selector: 'load-posts',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
+
 export class PostsComponent implements OnInit {
-
-  itemsRef: AngularFireList<any>;
-  public quotes: Observable<any[]>;
-
-
-  constructor(private db: AngularFireDatabase) { }
+   quotes: Observable<any[]>;
+  
+  constructor(  private postService: PostService) { }
 
   ngOnInit() {
-    this.itemsRef = this.db.list('quotes');
 
-    this.quotes = this.itemsRef.snapshotChanges().pipe(map(changes => {
-      LoginModel.quotesCount = changes.map(c => ({ key: c.payload.key, ...c.payload.val() })).length;
-      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() })).reverse();
-    }));
-
-   
+    this.quotes = this.postService.getQuotes();
+    console.log(this.quotes);
+    
   }
 
-  /* Add quote to database */
-  addQuote(message: string) {
-    this.itemsRef.push({ quote: message, created: (new Date().toLocaleString()), who: LoginModel.username });
-  }
+  // /* Add quote to database */
+  // addQuote(message: string) {
+  //   this.postService.addQuote(message);
+  // }
 
-  /* Update quote from the database */
-  updateQuote(key: string, newMessage: string) {
-    this.itemsRef.update(key,{quote: newMessage, created: (new Date().toLocaleDateString())});
-  }
+  // /* Update quote from the database */
+  // updateQuote(key: string, newMessage: string) {
+  //   this.postService.updateQuote(key, newMessage);
+  // }
 
-  /* Delete quote from database */
+  // /* Delete quote from database */
 
-  deleteQuote(key: string){
-    this.itemsRef.remove(key);
-  }
+  // deleteQuote(key: string) {
+  //   this.postService.deleteQuote(key);
+  // }
 
-  /* Delete all quotes */
+  // /* Delete all quotes */
 
-  deleteAllQuotes(){
-    this.itemsRef.remove();
-  }
+  // deleteAllQuotes() {
+  //   this.postService.deleteAllQuotes();
+  // }
 }

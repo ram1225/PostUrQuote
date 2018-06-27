@@ -1,4 +1,3 @@
-
 <section>
   <div class="container-fluid">
     <div class="row">
@@ -6,22 +5,25 @@
         <app-aside></app-aside>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6 post">
-        <app-post-dashboard [postRef]="postRef"></app-post-dashboard>
-        <load-posts #postRef></load-posts>
+        <app-post-dashboard></app-post-dashboard>
+        <load-posts></load-posts>
+        <!-- 
+          it was coded using template referencing to access methods of components to post data
+          and later changed to service for reusability
+          
+          <app-post-dashboard [postRef]="postRef"></app-post-dashboard>
+        <load-posts #postRef></load-posts> -->
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 sidebox">
+        <app-follow></app-follow>
       </div>
 
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-5 col-lg-3">
-      
+
       </div>
       <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6 post">
-     
-         
-
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
       </div>

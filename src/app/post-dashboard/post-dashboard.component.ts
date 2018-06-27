@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, FormControlName, Validators } from '@angular/forms';
-import { PostsComponent } from './post/post.component';
+import { PostService } from '../service/post.service';
 
 @Component({
   selector: 'app-post-dashboard',
@@ -10,11 +10,9 @@ import { PostsComponent } from './post/post.component';
 export class PostDashboardComponent implements OnInit {
   pattern: string = "[a-zA-Z0-9!, ]+";
   postForm: FormGroup;
-  @Input() postRef: PostsComponent;
+  // @Input() postRef: PostsComponent;
   
-  constructor() {
- 
-   }
+  constructor(private postRef: PostService) {}
 
   ngOnInit() {
    this.postForm= new FormGroup({
