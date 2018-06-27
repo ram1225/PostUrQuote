@@ -9,10 +9,11 @@ import { LoginModel } from '../models/login-model';
 
 @Injectable()
 export class AuthService {
-  private user: Observable<firebase.User>;
+  public user: Observable<firebase.User>;
   public userDetails: firebase.User = null;
    showNavSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public showNav = this.showNavSubject.asObservable();
+
 
   constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
     this.user = _firebaseAuth.authState;

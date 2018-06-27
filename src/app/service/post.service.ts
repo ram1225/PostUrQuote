@@ -3,7 +3,8 @@ import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { LoginModel } from '../models/login-model';
 import { map } from 'rxjs/operators';
-import { FollowersDataService } from '../follow/followers.service';
+import { FollowersDataService } from '../screens/follow/followers.service';
+
 
 @Injectable()
 export class PostService {

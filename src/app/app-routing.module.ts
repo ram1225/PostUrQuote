@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes , CanActivate } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
+
 import { AuthService } from './service/auth.service';
 import { AuthGuardService } from './service/auth-guard.service';
+import { LoginComponent } from './screens/login/login.component';
+import { HomeComponent } from './screens/home/home.component';
+import { DashboardComponent } from './screens/dashboard/dashboard.component';
+import { PageNotFoundComponent } from './screens/pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full',canActivate: [AuthGuardService] },

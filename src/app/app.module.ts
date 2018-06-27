@@ -5,25 +5,31 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { NavComponent } from './nav/nav.component';
-import { AsideComponent } from './aside/aside.component';
-import { PostDashboardComponent } from './post-dashboard/post-dashboard.component';
+
 
 import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from '../environments/firebase.config';
-import { PostsComponent } from './post-dashboard/post/post.component';
+
 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
+
 import { AuthService } from './service/auth.service';
 import { AuthGuardService } from './service/auth-guard.service';
-import { FollowComponent } from './follow/follow.component';
-import { FollowersDataService } from './follow/followers.service';
+
 import { PostService } from './service/post.service';
+import { LoginComponent } from './screens/login/login.component';
+import { HomeComponent } from './screens/home/home.component';
+import { NavComponent } from './screens/nav/nav.component';
+import { AsideComponent } from './screens/aside/aside.component';
+import { PostDashboardComponent } from './screens/post-dashboard/post-dashboard.component';
+import { PostsComponent } from './screens/post-dashboard/post/post.component';
+import { DashboardComponent } from './screens/dashboard/dashboard.component';
+import { PageNotFoundComponent } from './screens/pagenotfound/pagenotfound.component';
+import { FollowComponent } from './screens/follow/follow.component';
+import { ToarrayPipe } from './pipes/toarray.pipe';
+import { FollowersDataService } from './screens/follow/followers.service';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +42,8 @@ import { PostService } from './service/post.service';
     PostsComponent,
     DashboardComponent,
     PageNotFoundComponent,
-    FollowComponent
+    FollowComponent,
+    ToarrayPipe
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { LoginModel } from '../models/login-model';
+
 import { Router } from '@angular/router';
-import { AuthService } from '../service/auth.service';
+import { LoginModel } from '../../models/login-model';
+import { AuthService } from '../../service/auth.service';
+
 
 /*
 For email pattern validation: https://www.concretepage.com/angular-2/angular-2-4-email-validation-example

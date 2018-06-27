@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, FormControlName, Validators } from '@angular/forms';
-import { PostService } from '../service/post.service';
+import { PostService } from '../../service/post.service';
 
 @Component({
   selector: 'app-post-dashboard',

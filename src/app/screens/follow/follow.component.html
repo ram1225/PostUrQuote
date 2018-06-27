@@ -1,0 +1,25 @@
+<div>
+  <div class="card" *ngFor="let item of data | toarray">
+    <div class="card-body">
+      <div class="DashboardProfileCard-avatarContainer">
+        <div class="avatar">
+          <div class="DashboardProfileCard-avatarImage">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="DashboardProfileCard-userFields">
+          <div class="username">{{ item.name }}</div>
+          <div class="email">{{ item.email }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 following">
+          <button class="btn btn-info">Follow</button>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="DashboardProfileCard-avatarContainer"><i class="fa fa-camera"></i></div> -->
+  </div>
+</div>
