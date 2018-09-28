@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     /* to prevent showing nav bar when user tries unauthorized access to other pages */
     if (this.authService.isLoggedIn) {
-         this.authService.setNavBar(false);    
+         this.authService.setNavBar(false);  
+       //  this.router.navigate(['/home']);  
     }
     this.createForm();
   }
@@ -73,11 +74,11 @@ export class LoginComponent implements OnInit {
 
   signInWithGoogle() {
     if (this.authService.isLoggedIn()) {
-      this.router.navigate(['home']);
+      this.router.navigate(['/home']);
     } else {
       this.authService.signInWithGoogle().then(
         (res) => {
-          this.router.navigate(['home']);
+          this.router.navigate(['/home']);
         })
         .catch((err) => console.log(err));
     }

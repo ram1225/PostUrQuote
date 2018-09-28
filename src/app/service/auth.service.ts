@@ -36,9 +36,11 @@ export class AuthService {
       }
     );
   }
+
   public setNavBar(value: boolean){
     this.showNavSubject.next(value);
   }
+  
   public signInWithGoogle() {
 
     return this._firebaseAuth.auth.signInWithPopup(

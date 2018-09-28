@@ -1,4 +1,10 @@
 <header>
     <app-nav [navItems]="sections" [navLinks]="routerLinks" *ngIf="showNav"></app-nav>
 </header>
-<router-outlet></router-outlet>
+<div class="body">
+    <router-outlet></router-outlet>
+</div>
+
+<footer>
+    <div class="content"></div>
+</footer>

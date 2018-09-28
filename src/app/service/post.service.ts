@@ -10,7 +10,9 @@ import { FollowersDataService } from '../screens/follow/followers.service';
 export class PostService {
 
   itemsRef: AngularFireList<any>;
-  
+  private totalQuotesCountSubject: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  public totalQuotesObservable = this.totalQuotesCountSubject.asObservable();
+
   constructor(private db: AngularFireDatabase, private followersDataService: FollowersDataService) { }
 
 
@@ -19,7 +21,7 @@ export class PostService {
 
     return this.itemsRef.snapshotChanges().pipe(map(changes => {
       LoginModel.quotesCount = changes.map(c => ({ key: c.payload.key, ...c.payload.val() })).length;
-    
+      this.totalQuotesCountSubject.next((LoginModel.quotesCount>0?LoginModel.quotesCount-1:0));
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() })).reverse().filter((data) => {
         if (data.key === "users") this.followersDataService.canFollowData.next(data);      
           return data.key != "users";
